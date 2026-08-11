@@ -5,16 +5,16 @@ Interactive feature viewer and pretrained weights for
 (Ghassemlou & Joseph, 1st IJCAI Workshop on Safe Physical AI, 2026).
 
 We train **archetypal sparse transcoders** on the block-10 FFN of a frozen
-**V-JEPA 2.1 ViT-B/16 384px** video encoder --> to our knowledge the first sparse
+**V-JEPA 2.1 ViT-B/16 384px** video encoder, to our knowledge the first sparse
 transcoder decomposition of a self-supervised *video* model's internal features. The headline
-model reaches held-out explained variance 0.480 at L0 ≈ 59, and surfaces
+model reaches held-out explained variance 0.479 at L0 ≈ 59, and surfaces
 motion-aligned features that track a common motion primitive across different
 object identities.
 
 ## Interactive feature viewer
 
 [`decent-sweep-5_viewer.html`](decent-sweep-5_viewer.html) is a self-contained
-viewer for the headline model's discovered features --> each feature's top-activating
+viewer for the headline model's discovered features: each feature's top-activating
 Something-Something-v2 clips, with the spatiotemporal `(t, h, w)` locations marked.
 All images are embedded, so it works offline in any browser.
 
@@ -29,7 +29,7 @@ All images are embedded, so it works offline in any browser.
 
 ## Pretrained weights
 
-The headline checkpoint (held-out EV 0.480, L0 59) and the random-init
+The headline checkpoint (held-out EV 0.479, L0 59) and the random-init
 control baseline are released on Hugging Face, with a model card, `config.json`,
 the model class, and a loading example:
 
@@ -37,7 +37,7 @@ the model class, and a loading example:
 
 The K-means archetype pool is bundled inside the weights, so the decoder is
 self-contained. Note that the transcoder operates on V-JEPA 2.1 block-10 FFN
-activations --> see the model card for the exact substrate, hook site, and
+activations; see the model card for the exact substrate, hook site, and
 preprocessing needed to use it.
 
 ## Citation
